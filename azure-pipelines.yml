@@ -25,6 +25,7 @@ jobs:
       gclient
     displayName: 'Config depot_tools'
   - script: |
+      del C:\ProgramData\Chocolatey\bin\pytho*.exe
       set PATH=%cd%\depot_tools;%PATH%;
       gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git
       gclient sync --revision=%PDFIUM_REVISION%
