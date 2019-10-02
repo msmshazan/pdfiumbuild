@@ -26,6 +26,7 @@ jobs:
       set PATH=%cd%\depot_tools;%PATH%;
       gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git
       gclient sync --revision=%PDFIUM_REVISION%
+      dir
     displayName: 'Fetch Pdfium repo'
   - script: |
       set PATH=%cd%\depot_tools;%PATH%;
@@ -36,8 +37,8 @@ jobs:
       Choco install llvm 2>&1>$null
       $env:Path = "$pwd\depot_tools;" + $env:Path
       cd pdfium
-      bin/gn gen out/Release_32 --args='clang_win=\"C:\Program Files\LLVM\" is_official_build=true is_component_build=false target_os=\"win\"  extra_cflags=[  \"/EHsc\", \"/Z7\" , \"/wd4291\" , \"/arch:AVX\"  ] extra_ldflags=[ \"/DEBUG:FULL\" ] target_cpu=\"x86\"' --ide=vs
-      bin/gn gen out/Release_64 --args='clang_win=\"C:\Program Files\LLVM\" is_official_build=true is_component_build=false target_os=\"win\"  extra_cflags=[  \"/EHsc\", \"/Z7\" , \"/wd4291\" , \"/arch:AVX\"  ] extra_ldflags=[ \"/DEBUG:FULL\" ] target_cpu=\"x64\"' --ide=vs
+      bin/gn gen out/Release_32 --args='clang_win=\"C:\Program Files\LLVM\" is_official_build=true is_component_build=false target_os=\"win\"  extra_cflags=[  \"/EHsc\", \"/Z7\" , \"/wd4291\" , \"/arch:AVX\"  ] extra_ldflags=[ \"/DEBUG:FULL\" ] target_cpu=\"x86\"' 
+      bin/gn gen out/Release_64 --args='clang_win=\"C:\Program Files\LLVM\" is_official_build=true is_component_build=false target_os=\"win\"  extra_cflags=[  \"/EHsc\", \"/Z7\" , \"/wd4291\" , \"/arch:AVX\"  ] extra_ldflags=[ \"/DEBUG:FULL\" ] target_cpu=\"x64\"'
     displayName: 'Setup build projects'
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
