@@ -66,7 +66,7 @@ jobs:
 
   - task: GitHubRelease@1
     inputs:
-      gitHubConnection: 'msmshazan''s Github PAT'
+      gitHubConnection: 'msmshazan''''s Github PAT'
       repositoryName: 'msmshazan/pdfiumbuild'
       action: 'create'
       target: '$(Build.SourceVersion)'
