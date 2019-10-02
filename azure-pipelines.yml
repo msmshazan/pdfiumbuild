@@ -19,6 +19,7 @@ jobs:
   - script: |
       set PATH=%cd%\depot_tools;%PATH%;
       cd depot_tools
+      ./update_depot_tools.bat
       gclient
     displayName: 'Config depot_tools'
   - script: |
