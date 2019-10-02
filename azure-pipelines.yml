@@ -3,6 +3,8 @@ trigger:
 
 variables:
   DEPOT_TOOLS_WIN_TOOLCHAIN: '0'
+  DEPOT_TOOLS_METRICS: '0'
+  PYTHON_HOME: ''
   PDFIUM_REVISION: '1285f619cd6ad4bdab263ce9b4b6f2599e3aa461'
 
 jobs:
