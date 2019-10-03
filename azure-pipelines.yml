@@ -43,6 +43,7 @@ jobs:
       gn gen out/Release_64 --args='clang_win=\"C:\Program Files\LLVM\" is_official_build=true is_component_build=false target_os=\"win\"  extra_cflags=[  \"/EHsc\", \"/Z7\" , \"/wd4291\" , \"/arch:AVX\"  ] extra_ldflags=[ \"/DEBUG:FULL\" ] target_cpu=\"x64\"'
     displayName: 'Setup build projects'
   - script: |
+      set PATH=%cd%\depot_tools;%PATH%;
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
       cd pdfium
       autoninja -C out\Build_64 pdfium
