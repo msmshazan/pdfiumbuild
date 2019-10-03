@@ -34,7 +34,6 @@ jobs:
   - script: |
       set PATH=%cd%\depot_tools;%PATH%;
       cd pdfium
-      ..\depot_tools\python tools\git-sync-deps
     displayName: 'Sync Pdfium deps'
   - powershell: |
       Choco install llvm 2>&1>$null
