@@ -46,8 +46,8 @@ jobs:
       set PATH=%cd%\depot_tools;%PATH%;
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
       cd pdfium
-      autoninja -C out\Build_64 pdfium
-      autoninja -C out\Build_32 pdfium
+      autoninja -C out\Release_32 pdfium
+      autoninja -C out\Release_64 pdfium
     displayName: 'Build pdfium'
   - powershell: |
       New-Item -Name "x64" -ItemType "directory" 
