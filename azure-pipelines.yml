@@ -63,7 +63,7 @@ jobs:
       Move-Item -Path "x64" -Destination "lib"
       Move-Item -Path "x86" -Destination "lib"
       Move-Item -Path "lib" -Destination "Binaries"
-      Copy-Item -Path "pdfium\include" -Destination "Binaries" -Recurse 
+      Copy-Item -Path "pdfium\public" -Destination "Binaries" -Recurse 
       7z a $(Build.ArtifactStagingDirectory)\Pdfium.zip Binaries\*
     displayName: 'Copy Binaries'
   - publish: $(Build.ArtifactStagingDirectory)/Pdfium.zip
