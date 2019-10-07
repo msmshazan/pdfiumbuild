@@ -54,6 +54,8 @@ jobs:
       New-Item -Name "x86" -ItemType "directory"
       New-Item -Name "lib" -ItemType "directory"
       New-Item -Name "Binaries" -ItemType "directory"
+      Copy-Item -Path "pdfium\out\Release_32\*.lib" -Destination "x86" -Recurse 
+      Copy-Item -Path "pdfium\out\Release_64\*.lib" -Destination "x64" -Recurse 
       Get-ChildItem -Path "pdfium\out\Release_64\*" -Include *.lib -Recurse | Copy-Item -Destination "x64"
       Get-ChildItem -Path "pdfium\out\Release_32\*" -Include *.lib -Recurse | Copy-Item -Destination "x86"
       Move-Item -Path "x64" -Destination "lib"
