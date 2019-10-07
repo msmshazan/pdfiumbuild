@@ -39,8 +39,8 @@ jobs:
       Choco install llvm 2>&1>$null
       $env:Path = "$pwd\depot_tools;" + $env:Path
       cd pdfium
-      gn gen out/Release_32 --args='is_clang=true is_official_build=true is_component_build=false target_os=\"win\"  target_cpu=\"x86\"' 
-      gn gen out/Release_64 --args='is_clang=true is_official_build=true is_component_build=false target_os=\"win\"  target_cpu=\"x64\"'
+      gn gen out/Release_32 --args='is_clang=true is_official_build=true is_component_build=false pdf_is_standalone=true pdf_enable_v8=true pdf_enable_xfa=true target_os=\"win\"  target_cpu=\"x86\"' 
+      gn gen out/Release_64 --args='is_clang=true is_official_build=true is_component_build=false pdf_is_standalone=true pdf_enable_v8=true pdf_enable_xfa=true target_os=\"win\"  target_cpu=\"x64\"'
     displayName: 'Setup build projects'
   - powershell: |
       $env:Path = "$pwd\depot_tools;" + $env:Path
