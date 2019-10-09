@@ -51,14 +51,14 @@ jobs:
       &("C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat")
       cd pdfium
       autoninja -C out\Release_32 pdfium_all
-      Copy-Item -Path "pdfium\out\Release_32\*.lib" -Destination "x86" -Recurse 
-      Copy-Item -Path "pdfium\out\Release_32\*.pdb" -Destination "x86" -Recurse 
-      Copy-Item -Path "pdfium\out\Release_32\*.dll" -Destination "x86" -Recurse
+      Copy-Item -Path "out\Release_32\*.lib" -Destination "..\x86" -Recurse 
+      Copy-Item -Path "out\Release_32\*.pdb" -Destination "..\x86" -Recurse 
+      Copy-Item -Path "out\Release_32\*.dll" -Destination "..\x86" -Recurse
       Remove-Item -LiteralPath "out\Release_32" -Force -Recurse 
       autoninja -C out\Release_64 pdfium_all
-      Copy-Item -Path "pdfium\out\Release_64\*.lib" -Destination "x64" -Recurse 
-      Copy-Item -Path "pdfium\out\Release_64\*.pdb" -Destination "x64" -Recurse 
-      Copy-Item -Path "pdfium\out\Release_64\*.dll" -Destination "x64" -Recurse
+      Copy-Item -Path "out\Release_64\*.lib" -Destination "..\x64" -Recurse 
+      Copy-Item -Path "out\Release_64\*.pdb" -Destination "..\x64" -Recurse 
+      Copy-Item -Path "out\Release_64\*.dll" -Destination "..\x64" -Recurse
       Remove-Item -LiteralPath "out\Release_64" -Force -Recurse  
     displayName: 'Build pdfium'
   - powershell: |
