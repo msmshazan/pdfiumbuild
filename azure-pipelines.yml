@@ -5,7 +5,7 @@ variables:
   DEPOT_TOOLS_WIN_TOOLCHAIN: '0'
   DEPOT_TOOLS_METRICS: '0'
   PYTHON_HOME: ''
-  PDFIUM_REVISION: '1285f619cd6ad4bdab263ce9b4b6f2599e3aa461'
+  PDFIUM_REVISION: '338637d99cec75d6280e6c62a9a62fc7a30df592'
 
 jobs:
 - job: Build_Pdfium
@@ -43,8 +43,8 @@ jobs:
       Choco install llvm 2>&1>$null
       $env:Path = "$pwd\depot_tools;" + $env:Path
       cd pdfium
-      gn gen out/Release_32 --args='is_clang=true is_component_build=true pdf_is_standalone=true pdf_enable_v8=true pdf_enable_xfa=true pdf_use_skia=false pdf_use_skia_paths=false target_os=\"win\"  target_cpu=\"x86\"' 
-      gn gen out/Release_64 --args='is_clang=true is_component_build=true pdf_is_standalone=true pdf_enable_v8=true pdf_enable_xfa=true pdf_use_skia=false pdf_use_skia_paths=false target_os=\"win\"  target_cpu=\"x64\"'
+      gn gen out/Release_32 --args='is_clang=true is_component_build=true pdf_is_standalone=true pdf_enable_v8=false pdf_enable_xfa=true pdf_use_skia=false pdf_use_skia_paths=false target_os=\"win\"  target_cpu=\"x86\"' 
+      gn gen out/Release_64 --args='is_clang=true is_component_build=true pdf_is_standalone=true pdf_enable_v8=false pdf_enable_xfa=true pdf_use_skia=false pdf_use_skia_paths=false target_os=\"win\"  target_cpu=\"x64\"'
     displayName: 'Setup build projects'
   - powershell: |
       $env:Path = "$pwd\depot_tools;" + $env:Path
