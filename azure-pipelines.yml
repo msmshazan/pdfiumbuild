@@ -5,7 +5,7 @@ variables:
   DEPOT_TOOLS_WIN_TOOLCHAIN: '0'
   DEPOT_TOOLS_METRICS: '0'
   PYTHON_HOME: ''
-  PDFIUM_REVISION: '338637d99cec75d6280e6c62a9a62fc7a30df592'
+  PDFIUM_REVISION: 'd89bfea9daf26c73f4bb69e056a62cb2f1d941cf'
 
 jobs:
 - job: Build_Pdfium
