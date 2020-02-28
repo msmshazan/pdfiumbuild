@@ -5,7 +5,7 @@ variables:
   DEPOT_TOOLS_WIN_TOOLCHAIN: '0'
   DEPOT_TOOLS_METRICS: '0'
   PYTHON_HOME: ''
-  PDFIUM_REVISION: 'd89bfea9daf26c73f4bb69e056a62cb2f1d941cf'
+  PDFIUM_REVISION: '57b83355c5155c2f8f9093b1e13ec12dd1bfe2f7'
   PYTHONWARNINGS: 'ignore:DEPRECATION::pip._internal.cli.base_command'
 
 jobs:
