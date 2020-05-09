@@ -7,6 +7,7 @@ variables:
   PYTHON_HOME: ''
   PDFIUM_REVISION: 'b1e8054bb8b16c37b0cb8b50a7a972bebd97915f'
   PYTHONWARNINGS: 'ignore:DEPRECATION::pip._internal.cli.base_command'
+  GCLIENT_PY3: '1'
 
 jobs:
 - job: Build_Pdfium
