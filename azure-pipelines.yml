@@ -44,7 +44,7 @@ jobs:
   - powershell: |
       Choco install llvm 2>&1>$null
       $env:Path = "$pwd\depot_tools;" + $env:Path
-      python -m pip install pywin32
+      python -m pip --disable-pip-version-check install pywin32
       cd pdfium
       gn gen out/Release_32 --args='is_clang=true is_debug=false use_custom_libcxx=true is_component_build=true pdf_is_standalone=true pdf_enable_v8=false pdf_enable_xfa=false pdf_use_skia=false pdf_use_skia_paths=false target_os=\"win\"  target_cpu=\"x86\"' 
       gn gen out/Release_64 --args='is_clang=true is_debug=false use_custom_libcxx=true is_component_build=true pdf_is_standalone=true pdf_enable_v8=false pdf_enable_xfa=false pdf_use_skia=false pdf_use_skia_paths=false target_os=\"win\"  target_cpu=\"x64\"'
